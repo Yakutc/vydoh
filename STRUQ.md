@@ -63,7 +63,7 @@ Motion: baseline; deviation (Warm Editorial's declared editorial-calm): entrance
 ## PLAN
 Pages: / (one-pager); anchors #method, #hours, #money, #price. Legal text lives in the footer.
 Arc (home):
-  1 HERO      [Hook]    h1 «Бросить курить и вейпить», cropped «ВЫДОХ» off the right edge
+  1 HERO      [Hook]    h1 «Бросить курить и парить», cropped «ВЫДОХ» off the right edge
                         (grid-break 1), breath arc crosses the section, calm ring; full svh,
                         8 to 10rem top air + the foot meta
   2 MANIFESTO [Orient]  one statement alone in 18rem of air (breather), naming cigarettes, vapes

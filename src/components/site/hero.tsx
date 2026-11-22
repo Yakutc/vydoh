@@ -74,7 +74,7 @@ export function Hero() {
               </p>
 
               <HeroHeadline className="mt-6 max-w-[14ch] font-display text-display md:mt-8">
-                Бросить курить и вейпить.
+                Бросить курить и парить.
               </HeroHeadline>
 
               <p

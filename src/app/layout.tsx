@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   // paths itself; the canonical stays absolute in the page metadata.
   metadataBase: new URL(new URL(SITE_URL).origin),
   title: {
-    default: "ВЫДОХ — бросить курить и вейпить без силы воли",
+    default: "ВЫДОХ — бросить курить и парить без силы воли",
     template: "%s — ВЫДОХ",
   },
   description:
@@ -23,13 +23,13 @@ export const metadata: Metadata = {
     siteName: "ВЫДОХ",
     locale: "ru_RU",
     url: SITE_URL,
-    title: "ВЫДОХ — бросить курить и вейпить без силы воли",
+    title: "ВЫДОХ — бросить курить и парить без силы воли",
     description:
       "Система на 21 день: сигареты, вейпы, электронки. Пережди пик, посчитай деньги, верни воздух.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "ВЫДОХ — бросить курить и вейпить без силы воли",
+    title: "ВЫДОХ — бросить курить и парить без силы воли",
     description:
       "Система на 21 день: сигареты, вейпы, электронки. Пережди пик, посчитай деньги, верни воздух.",
   },
