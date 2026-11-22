@@ -1,36 +1,77 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# ВЫДОХ
 
-## Getting Started
+Лендинг продукта, который помогает бросить курить, парить и отказаться от
+электронных сигарет: 21-дневная система, инструмент «пережди пик тяги» и
+калькулятор в двух режимах — сигареты и вейп. Показывает, сколько денег и дней
+жизни возвращается.
 
-First, run the development server:
+## Запуск
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+npm run dev      # http://localhost:3000
+npm run build    # статическая сборка в out/
+npm start        # preview out/ на http://localhost:3100
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Деплой: бесплатно, без домена
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Сайт полностью статический (`output: "export"`).
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+**GitHub Pages:** https://yakutc.github.io/vydoh/
+Репозиторий: https://github.com/Yakutc/vydoh
 
-## Learn More
+Обновление одной командой:
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+node scripts/deploy-gh-pages.mjs
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Скрипт собирает сайт с `NEXT_PUBLIC_BASE_PATH=/vydoh` и пушит `out/` в ветку
+`gh-pages` (включи Settings → Pages → Source: gh-pages / root один раз).
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+**Cloudflare Pages** — альтернатива с `*.pages.dev`: build `npm run build`,
+output `out`, env `NEXT_PUBLIC_SITE_URL`, base path пустой.
 
-## Deploy on Vercel
+Подробности — в `deploy/README.md`. Контакты: **askfncs@gmail.com**,
+Санкт-Петербург.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Стек
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Next.js 16 (App Router, static export) + React 19 + TypeScript
+- Tailwind CSS 4 (`@theme`, один fluid-rem knob)
+- GSAP 3.15 (ScrollTrigger, SplitText, DrawSVG) + Lenis на одном тикере
+- Radix Dialog (меню и дыхательная практика)
+- `@struq/icons` (одна иконочная семья)
+- Шрифты: Cormorant Garamond (display) + Manrope (text), оба с кириллицей
+
+## Что внутри
+
+- `STRUQ.md` — дизайн-контракт: концепция, палитра, типографика, арка страницы.
+- `brand/` — нейминг, знак и словесный логотип.
+- `src/app/` — маршруты, метаданные, OG-картинка, sitemap, robots, 404.
+- `src/components/site/` — секции лендинга.
+- `src/components/ui/` — анимационные примитивы (reveal, split lines, hero clip).
+- `scripts/` — проверка (скриншоты, first-load JS, LCP/CLS, frame trace).
+
+## Монетизация (что уже есть и чего ещё нет)
+
+На странице есть реальная воронка: бесплатный калькулятор (сигареты и вейп) →
+Pro по подписке → годовой тариф → B2B-программа для компаний. Но это **витрина**,
+а не касса:
+
+- оплата (Stripe / CloudPayments / ЮKassa) не подключена;
+- форма почты открывает почтовый клиент через `mailto:`;
+- аналитика и CRM не подключены;
+- цены — предложение, а не действующий прайс.
+
+Следующий шаг для денег: подключить checkout и аналитику, затем трафик
+(поиск + короткие видео «14:40»), затем удержание (21-дневный план и трекер).
+
+## Важно
+
+Название, логотип и домен сгенерированы: проверьте товарный знак и занятость
+домена перед запуском. Медицинские ориентиры (20 минут / 8 часов / 72 часа)
+даны по CDC и NHS как справка, не как назначение. Для вейпов долгосрочные данные
+ещё собираются — калькулятор считает деньги и миллилитры, а не «минуты жизни».
+Продукт 18+ и не заменяет врача.

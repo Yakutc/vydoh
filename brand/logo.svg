@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 64" fill="none" role="img" aria-label="ВЫДОХ">
+  <!-- Live-type wordmark: Cormorant Garamond 400, tracked +0.14em. Outline it from the licensed
+       static file when the brand is registered; the mark and the tracking are final. -->
+  <g fill="currentColor">
+    <path d="M13.1 32C13.14 32.11 13.32 32.4 13.33 32.64C13.33 32.88 13.29 33.19 13.15 33.44C13.01 33.69 12.78 33.98 12.49 34.16C12.21 34.34 11.81 34.5 11.42 34.52C11.04 34.55 10.56 34.49 10.16 34.31C9.75 34.13 9.31 33.83 9 33.44C8.69 33.06 8.41 32.54 8.3 32C8.19 31.46 8.18 30.81 8.33 30.23C8.49 29.65 8.8 29.01 9.23 28.53C9.66 28.04 10.27 27.57 10.93 27.31C11.58 27.04 12.4 26.89 13.15 26.94C13.91 27 14.77 27.24 15.46 27.66C16.16 28.07 16.87 28.7 17.34 29.43C17.81 30.15 18.14 31.57 18.3 32L22.4 32" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <text x="34" y="44" fill="currentColor" font-family="'Cormorant Garamond', Georgia, serif" font-size="44" font-weight="400" letter-spacing="6">ВЫДОХ</text>
+</svg>

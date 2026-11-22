@@ -1,0 +1,31 @@
+export function Mark({
+  className = "",
+  size = 24,
+  title,
+}: {
+  className?: string;
+  size?: number;
+  title?: string;
+}) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      width={size}
+      height={size}
+      fill="none"
+      className={className}
+      role={title ? "img" : undefined}
+      aria-hidden={title ? undefined : true}
+      aria-label={title}
+    >
+      {title ? <title>{title}</title> : null}
+      <path
+        d="M13.1 12C13.14 12.11 13.32 12.4 13.33 12.64C13.33 12.88 13.29 13.19 13.15 13.44C13.01 13.69 12.78 13.98 12.49 14.16C12.21 14.34 11.81 14.5 11.42 14.52C11.04 14.55 10.56 14.49 10.16 14.31C9.75 14.13 9.31 13.83 9 13.44C8.69 13.06 8.41 12.54 8.3 12C8.19 11.46 8.18 10.81 8.33 10.23C8.49 9.65 8.8 9.01 9.23 8.53C9.66 8.04 10.27 7.57 10.93 7.31C11.58 7.04 12.4 6.89 13.15 6.94C13.91 7 14.77 7.24 15.46 7.66C16.16 8.07 16.87 8.7 17.34 9.43C17.81 10.15 18.14 11.57 18.3 12L22.4 12"
+        stroke="currentColor"
+        strokeWidth="1.6"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}

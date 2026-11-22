@@ -1,9 +1,12 @@
-# Naming: a quit-smoking system
+# Naming: a quit-nicotine system
+
+Covers cigarettes, vapes and e-cigarettes.
 
 Positioning the name has to carry:
 
 - **For** people who have already tried to quit by willpower and failed, **ВЫДОХ is** a 21-day
-  system that plans for the minute the craving actually hits.
+  system that plans for the minute the craving actually hits — whether the nicotine comes from
+  a cigarette, a vape or an e-cigarette.
 - **Unlike** a willpower app, a nicotine patch alone, or a lecture from a doctor, **it** gives you
   one thing to do at 14:40 on a Tuesday: breathe, wait out the wave, and see what the habit costs
   and what quitting pays back.
