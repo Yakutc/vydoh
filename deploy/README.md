@@ -56,17 +56,36 @@ npm run build
 wrangler pages deploy out --project-name vydoh
 ```
 
-## Свой домен (опционально)
+## Домен vydoh.work.gd (FreeDomain.One)
 
-Домен не нужен для запуска. Если появится:
+Домен уже есть. **Сейчас** A-запись `vydoh.work.gd` → `94.19.227.208` — это
+OpenWrt/LuCI-роутер: по домену открывается админка роутера, а не сайт. Админку
+роутера лучше не держать в интернете.
 
-1. Купи на Reg.ru / Beget / Timeweb (`.ru` — примерно 200–500 ₽/год).
-2. Для GitHub Pages: Settings → Pages → Custom domain → впиши домен; у
-   регистратора добавь CNAME `www` → `yakutc.github.io` и A-записи GitHub Pages
-   для апекса. HTTPS включится сам.
-3. Для Cloudflare Pages: переведи DNS на Cloudflare и добавь Custom domain.
-4. После смены домена обнови `NEXT_PUBLIC_SITE_URL` и пересобери — от него
-   зависят canonical, OG и sitemap.
+Чтобы подключить GitHub Pages:
+
+1. FreeDomain.One → DNS → A/Host: **удалить** A на `94.19.227.208`.
+2. Добавить четыре A-записи для `vydoh.work.gd`:
+   - `185.199.108.153`
+   - `185.199.109.153`
+   - `185.199.110.153`
+   - `185.199.111.153`
+3. CNAME `www` → `yakutc.github.io` (сейчас `www` смотрит на `vydoh.work.gd`).
+4. TTL поставь 5 минут, если панель позволяет.
+5. После DNS пересобери сайт под домен:
+
+   ```powershell
+   $env:SITE_URL="https://vydoh.work.gd"; node scripts/deploy-gh-pages.mjs
+   ```
+
+   Скрипт сам поставит base path пустым (домен живёт в корне).
+6. Settings → Pages → Custom domain → `vydoh.work.gd` → Save. HTTPS GitHub
+   выдаст сам, когда DNS сойдётся.
+7. Если GitHub попросит TXT-запись для верификации домена — добавь её из
+   настроек Pages.
+
+До переключения сайт остаётся доступен на
+`https://yakutc.github.io/vydoh/`.
 
 ## Что важно знать
 

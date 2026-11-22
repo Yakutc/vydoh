@@ -21,6 +21,10 @@ npm start        # preview out/ на http://localhost:3100
 **GitHub Pages:** https://yakutc.github.io/vydoh/
 Репозиторий: https://github.com/Yakutc/vydoh
 
+Домен **vydoh.work.gd** (FreeDomain.One) подключается к GitHub Pages после
+смены A-записи — инструкция в `deploy/README.md`. Пока домен указывает на
+роутер, а не на сайт.
+
 Обновление одной командой:
 
 ```bash

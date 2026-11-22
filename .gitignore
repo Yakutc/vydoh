@@ -27,6 +27,9 @@
 # verification artefacts
 /shots
 
+# personal DNS receipt, never publish
+/domen112.pdf
+
 # debug
 npm-debug.log*
 yarn-debug.log*

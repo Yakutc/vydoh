@@ -135,6 +135,10 @@ Assets to produce: none (type-led). OG image is a static 1200x630 PNG in
   `NEXT_PUBLIC_BASE_PATH=/vydoh` and `.nojekyll`. `metadataBase` is the origin only (Next appends
   basePath to the OG/icon paths); the canonical is absolute `SITE_URL`. Free URL:
   https://yakutc.github.io/vydoh/
+- 2026-11-23 Domain: `vydoh.work.gd` (FreeDomain.One free subdomain). Its A record currently points
+  to `94.19.227.208`, an OpenWrt/LuCI router, not a web host. Plan: four GitHub Pages A records,
+  `www` CNAME to yakutc.github.io, GitHub Pages custom domain, rebuild with
+  `SITE_URL=https://vydoh.work.gd` and an empty base path. Pending the user's DNS change.
 
 ## VERIFY
 Server: static export (`out/`, 53 files, 1.53 MB); GitHub Pages branch `gh-pages` with `.nojekyll`;
@@ -142,6 +146,8 @@ Server: static export (`out/`, 53 files, 1.53 MB); GitHub Pages branch `gh-pages
 Hosting: https://yakutc.github.io/vydoh/ · repo Yakutc/vydoh (main = source, gh-pages = built site)
   · live HTTP 200 · canonical/OG/sitemap use the /vydoh base path · sitemap, robots and 404 verified
   · check-vape and interact pass on the live URL · OG 1200x630 at /vydoh/opengraph-image.png
+Domain: vydoh.work.gd (FreeDomain.One) — pending DNS switch to GitHub Pages; A record currently
+  points to 94.19.227.208 (OpenWrt/LuCI), so the domain shows the router, not the site.
 Viewports: 390, 768, 1440, 1920
 Score: 92/100
   LCP 1.43s desktop / 1.45s mobile on the live Pages URL (desktop: the cropped «ВЫДОХ» span;

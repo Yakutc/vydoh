@@ -13,15 +13,22 @@ import { join } from "node:path";
 // Usage: node scripts/deploy-gh-pages.mjs
 const owner = "Yakutc";
 const repo = "vydoh";
-const url = `https://${owner.toLowerCase()}.github.io/${repo}`;
+const customUrl = process.env.SITE_URL?.replace(/\/$/, "");
+const url = customUrl || `https://${owner.toLowerCase()}.github.io/${repo}`;
+const basePath =
+  process.env.BASE_PATH !== undefined
+    ? process.env.BASE_PATH
+    : customUrl
+      ? ""
+      : `/${repo}`;
 
-console.log(`Building ${url} ...`);
+console.log(`Building ${url} (base path: "${basePath}") ...`);
 execSync("npm run build", {
   stdio: "inherit",
   env: {
     ...process.env,
     NEXT_PUBLIC_SITE_URL: url,
-    NEXT_PUBLIC_BASE_PATH: `/${repo}`,
+    NEXT_PUBLIC_BASE_PATH: basePath,
   },
 });
 
