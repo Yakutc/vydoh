@@ -139,12 +139,14 @@ Assets to produce: none (type-led). OG image is a static 1200x630 PNG in
 ## VERIFY
 Server: static export (`out/`, 53 files, 1.53 MB); GitHub Pages branch `gh-pages` with `.nojekyll`;
   local preview `serve out` on :3100; no Node runtime
-Hosting: https://yakutc.github.io/vydoh/ · canonical/OG/sitemap use the /vydoh base path
+Hosting: https://yakutc.github.io/vydoh/ · repo Yakutc/vydoh (main = source, gh-pages = built site)
+  · live HTTP 200 · canonical/OG/sitemap use the /vydoh base path · sitemap, robots and 404 verified
+  · check-vape and interact pass on the live URL · OG 1200x630 at /vydoh/opengraph-image.png
 Viewports: 390, 768, 1440, 1920
 Score: 92/100
-  LCP 1.24s desktop / 1.22s mobile (desktop: the cropped «ВЫДОХ» span; mobile: the hero lead
-  paragraph; CLS 0.000; INP: field data pending). First-load JS 250.4 kB gzip, 10 scripts,
-  three.js absent. ESLint clean; build green; static build green.
+  LCP 1.43s desktop / 1.45s mobile on the live Pages URL (desktop: the cropped «ВЫДОХ» span;
+  mobile: the hero lead paragraph; CLS 0.010 / 0.000; INP: field data pending). First-load JS
+  250.4 kB gzip, 10 scripts, three.js absent. ESLint clean; build green; static build green.
   Layout: one h1, heading order valid, no horizontal overflow at 390/768/1440/1920.
   Motion: pin slow/fast/back tested (top locked at 0, data-mode=rig), vape notes fit the 24rem
   phase stage, reduced-motion stack readable, touch/no-JS readable, descender test «Gyp, jq.» whole,
