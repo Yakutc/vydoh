@@ -1,5 +1,11 @@
 import { execSync } from "node:child_process";
-import { cpSync, mkdirSync, rmSync, writeFileSync } from "node:fs";
+import {
+  cpSync,
+  mkdirSync,
+  readdirSync,
+  rmSync,
+  writeFileSync,
+} from "node:fs";
 import { tmpdir } from "node:os";
 import { join } from "node:path";
 
@@ -22,7 +28,9 @@ execSync("npm run build", {
 const temp = join(tmpdir(), "vydoh-gh-pages");
 rmSync(temp, { recursive: true, force: true });
 mkdirSync(temp, { recursive: true });
-cpSync("out", temp, { recursive: true });
+for (const entry of readdirSync("out")) {
+  cpSync(join("out", entry), join(temp, entry), { recursive: true });
+}
 writeFileSync(join(temp, ".nojekyll"), "");
 
 const run = (command) =>
